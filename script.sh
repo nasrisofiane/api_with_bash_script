@@ -6,6 +6,7 @@ gitRepositoryLink="https://github.com/groupe-epsi-work/restaurant.git"
 gitRepositoryBranch="sofiane_nasri"
 
 if [ -d "./$githubRepositoryName" ]; then
+    git -C "./$githubRepositoryName" restore .
     git -C "./$githubRepositoryName" pull origin "$gitRepositoryBranch"
 else 
     git clone "$gitRepositoryLink"
