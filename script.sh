@@ -27,7 +27,7 @@ tempFolderLocation="./temp"
 if [ -d "./$tempFolderLocation" ]; then
     echo "TEMP FOLDER ALREADY EXIST"
 else 
-    mkdir "$githubRepositoryName"
+    mkdir "$tempFolderLocation"
 fi
 
 rm -rf "$tempFolderLocation/*"
