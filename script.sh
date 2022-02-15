@@ -15,10 +15,10 @@ fi
 git -C "./$githubRepositoryName" checkout "$gitRepositoryBranch"
 
 # RUN BUILD
-mvn install -DskipTests
+mvn -f "./$githubRepositoryName" install -DskipTests
 
 # RUN TESTS
-mvn test
+mvn -f "./$githubRepositoryName" test
 
 ## KEEP PREVIOUS PROPERTIES
 applicationPropertiesLocation="./restaurant/target/classes/application.properties"
