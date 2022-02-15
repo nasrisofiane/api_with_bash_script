@@ -21,7 +21,7 @@ mvn -f "./$githubRepositoryName" install -DskipTests
 # RUN TESTS
 mvn -f "./$githubRepositoryName" test
 
-## KEEP PREVIOUS PROPERTIES
+## KEEP GENERATED PROPERTIES
 applicationPropertiesLocation="./restaurant/target/classes/application.properties"
 tempFolderLocation="./temp"
 
@@ -33,6 +33,12 @@ fi
 
 rm -rf "$tempFolderLocation/*"
 cp "$applicationPropertiesLocation" "$tempFolderLocation/"
+
+## MOVE PREVIOUS APPLICATION PROPERTIES TO BUILD LOCATION
+buildPropertiesFolderLocation="./restaurant/target/classes/"
+
+rm -f "$applicationPropertiesLocation"
+cp "$tempFolderLocation/*" "$buildPropertiesFolderLocation"
 
 ## DEPLOY SPRING BOOT APP
 applicationJarLocation="./restaurant/target/exercice-0.0.1-SNAPSHOT.jar"
