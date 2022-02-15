@@ -6,16 +6,13 @@ gitRepositoryLink="https://github.com/groupe-epsi-work/restaurant.git"
 gitRepositoryBranch="sofiane_nasri"
 
 if [ -d "./$githubRepositoryName" ]; then
-    cd "./$githubRepositoryName"
-    git pull origin "$gitRepositoryBranch"
-    cd ../
+    git -C "./$githubRepositoryName" pull origin "$gitRepositoryBranch"
 else 
     git clone "$gitRepositoryLink"
 fi
 
 # MOVE TO GIT BRANCH
-cd "./$githubRepositoryName"
-git checkout "$gitRepositoryBranch"
+git -C "./$githubRepositoryName" checkout "$gitRepositoryBranch"
 
 # RUN BUILD
 mvn install -DskipTests
