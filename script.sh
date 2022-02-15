@@ -38,7 +38,7 @@ cp "$applicationPropertiesLocation" "$tempFolderLocation/"
 buildPropertiesFolderLocation="./restaurant/target/classes/"
 
 rm -f "$applicationPropertiesLocation"
-cp "$tempFolderLocation/*" "$buildPropertiesFolderLocation"
+cp "$tempFolderLocation/application.properties" "$buildPropertiesFolderLocation"
 
 ## DEPLOY SPRING BOOT APP
 applicationJarLocation="./restaurant/target/exercice-0.0.1-SNAPSHOT.jar"
