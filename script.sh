@@ -33,7 +33,7 @@ cp "$applicationPropertiesLocation" "$tempFolderLocation/"
 ## DEPLOY SPRING BOOT APP
 applicationJarLocation="./restaurant/target/exercice-0.0.1-SNAPSHOT.jar"
 
-java -jar 
+java -jar "$applicationJarLocation"
 
 
 
