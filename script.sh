@@ -24,6 +24,12 @@ mvn -f "./$githubRepositoryName" test
 applicationPropertiesLocation="./restaurant/target/classes/application.properties"
 tempFolderLocation="./temp"
 
+if [ -d "./$tempFolderLocation" ]; then
+    echo "TEMP FOLDER ALREADY EXIST"
+else 
+    mkdir "$githubRepositoryName"
+fi
+
 rm -rf "$tempFolderLocation/*"
 cp "$applicationPropertiesLocation" "$tempFolderLocation/"
 
